@@ -1,0 +1,25 @@
+.list_items {
+  margin-top: 20px;
+}
+
+.list_items ul {
+  list-style-type: none;
+  margin: 15px auto;
+}
+
+.list_items ul li {
+  border: 1px solid silver;
+  width: 90%;
+  padding: 10px;
+}
+
+.list_items ul li .icon {
+  float: right;
+  cursor: pointer;
+}
+
+.list_items ul li .icon:hover {
+  -webkit-transform: scale(1.04, 1.04);
+          transform: scale(1.04, 1.04);
+}
+/*# sourceMappingURL=listItem.css.map */

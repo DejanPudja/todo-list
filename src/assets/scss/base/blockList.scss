@@ -1,0 +1,21 @@
+.container {
+  box-shadow: 2px 2px 2px 2px silver;
+  width: 50%;
+  margin: 100px auto;
+  padding: 20px;
+  .task_field {
+    border: none;
+    border-bottom: 1px solid silver;
+    width: 100%;
+    height: 40px;
+  }
+  .btn_add {
+    margin: 20px 0 50px 0;
+    padding: 8px 20px;
+    border: none;
+    background-color: #26a69a;
+    color: #ffff;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}

@@ -7,13 +7,17 @@
       border: 1px solid silver;
       width: 90%;
       padding: 10px;
-      .icon {
+      .icon-delete,
+      .icon-edit {
         float: right;
         cursor: pointer;
         &:hover {
           // font-size: 17px;
           transform: scale(1.04, 1.04);
         }
+      }
+      .icon-edit {
+        margin-right: 10px;
       }
     }
   }

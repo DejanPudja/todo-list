@@ -1,11 +1,16 @@
-import Service from '../../domain/task/TasksService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
+import Api from '../../utils/http/ApiClient';
 
 export default function BlocksListItem(props) {
-  const deleteTaskHandler = () => {
-    Service.deleteTask(props.data.id);
+  const deleteTaskHandler = async () => {
+    await Api.delete(`/Task/${props.data.id}`);
+    props.reFetch();
   };
+  const updateTaskHandler = async () => {};
+
   return (
     <ul>
       <li className="item">
@@ -14,7 +19,12 @@ export default function BlocksListItem(props) {
           <FontAwesomeIcon
             icon={faTrash}
             onClick={deleteTaskHandler}
-            className="icon"
+            className="icon-delete"
+          />
+          <FontAwesomeIcon
+            icon={faEdit}
+            onClick={updateTaskHandler}
+            className="icon-edit"
           />
         </i>
       </li>

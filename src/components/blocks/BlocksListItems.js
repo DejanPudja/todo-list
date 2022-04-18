@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import BlocksListItem from './BlocksListItem';
-import TasksService from '../../domain/task/TasksService';
 
-export default function BlocksListItems() {
-  const [tasks, setTasks] = useState([]);
+export default function BlocksListItems(props) {
+  const [task, setTask] = useState([]);
 
-  const getTasks = async () => {
-    let tasks = await TasksService.getTask();
-    setTasks(tasks);
-  };
   useEffect(() => {
-    getTasks();
-  }, [tasks]);
+    setTask(props.data);
+  });
 
   return (
     <div className="list_items">
-      {tasks.map((task) => {
-        return <BlocksListItem data={task} key={task.id} />;
+      {task.map((task, index) => {
+        return (
+          <BlocksListItem data={task} key={index} reFetch={props.reFetch} />
+        );
       })}
     </div>
   );

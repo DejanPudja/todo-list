@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Service from '../../domain/task/TasksService';
+import Api from '../../utils/http/ApiClient';
 
 export default function PartInputField(props) {
   const [enteredTask, setEnteredTask] = useState('');
@@ -14,8 +14,9 @@ export default function PartInputField(props) {
       task: enteredTask,
     };
     if (enteredTask !== '') {
-      Service.addTask(task);
+      Api.post('/Task', task);
       setEnteredTask('');
+      props.reFetch();
     }
   };
 

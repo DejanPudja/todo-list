@@ -49,13 +49,19 @@ code {
   padding: 10px;
 }
 
-.list_items ul li .icon {
+.list_items ul li .icon-delete,
+.list_items ul li .icon-edit {
   float: right;
   cursor: pointer;
 }
 
-.list_items ul li .icon:hover {
+.list_items ul li .icon-delete:hover,
+.list_items ul li .icon-edit:hover {
   -webkit-transform: scale(1.04, 1.04);
           transform: scale(1.04, 1.04);
+}
+
+.list_items ul li .icon-edit {
+  margin-right: 10px;
 }
 /*# sourceMappingURL=style.css.map */
